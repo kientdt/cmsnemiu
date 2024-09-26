@@ -1,0 +1,88 @@
+<html
+    __fvdsurfcanyoninserted="1"
+    class="
+        clickberry-extension
+        clickberry-extension-standalone
+        clickberry-extension
+        clickberry-extension-standalone
+        clickberry-extension
+        clickberry-extension-standalone
+    "
+>
+    <head>
+        <meta charset="UTF-8" />
+        <!-- 0. Phần icon của website (thay đổi link đến icon nếu bạn muốn sửa nó) -->
+        <link rel="shortcut icon" type="image/png" href="./birthdayCake.png"/>
+
+        <!-- 1. Đây là phần title của website -->
+        <title>Happy Birthday</title>
+        <link rel="stylesheet" href="./style.css">
+        <script>
+            window.open = function () {};
+            window.print = function () {};
+            // Support hover state for mobile.
+            if (false) {
+                window.ontouchstart = function () {};
+            }
+        </script>
+        <script
+            type="text/javascript"
+            src="chrome-extension://bfbmjmiodbnnpllbbbfblcplfjjepjdn/js/injected.js"
+        ></script>
+        <meta content="clickberry-extension-here" />
+    </head>
+
+    <body>
+        <link
+            href="https://fonts.googleapis.com/css?family=Wendy+One"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <div class="container">
+            <!-- 2. Dòng chữ Happy Birthday
+            Nếu bạn muốn thêm chữ vào thì phải thay đổi css tương ứng cho nó -->
+            <div class="balloon">
+                <div><span>H</span></div>
+                <div><span>A</span></div>
+                <div><span>P</span></div>
+                <div><span>P</span></div>
+                <div><span>Y</span></div>
+                <div><span>B</span></div>
+                <div><span>I</span></div>
+                <div><span>R</span></div>
+                <div><span>T</span></div>
+                <div><span>H</span></div>
+                <div><span>D</span></div>
+                <div><span>A</span></div>
+                <div><span>Y</span></div>
+            </div>
+            <div class="avatar">
+                <!-- 3. Avatar của người bạn muốn gởi lời chúc -->
+                <img src="./image.png" alt="" class="avatar__img" onclick="showMessage()" />
+                <!-- 4. Tên của người đó -->
+                <h1 onclick="showMessage()" class="avatar__title">Ngọc Ánh</h1>
+            </div>
+            
+            <!-- 5. Phần nhạc -->
+            <audio id="player" autoplay loop>
+                <source src="./music.mp3" type="audio/mp3">
+            </audio>
+        </div>
+        <script>
+            if (document.location.search.match(/type=embed/gi)) {
+                window.parent.postMessage("resize", "*");
+            }
+            function showMessage() {
+                // 6. Lời nhắn hiện ra khi bấm vào tên hoặc avatar
+                swal({
+                    title: "Lời nhắn", // Tiêu đề của popup
+                    text: "Em yêu của anh, ngày hôm nay không chỉ đặc biệt vì là sinh nhật em, mà còn bởi vì anh lại có thêm một cơ hội để yêu thương và trân trọng em hơn. Mỗi ngày bên em, anh đều cảm thấy may mắn và hạnh phúc. Anh hứa sẽ luôn ở bên cạnh, chăm sóc và bảo vệ em, không chỉ trong những khoảnh khắc vui vẻ mà cả khi cuộc đời thử thách. Anh yêu em nhiều hơn tất cả lời nói có thể diễn tả, và anh sẽ mãi mãi yêu em như thế. Chúc em sinh nhật thật vui và luôn hạnh phúc, không chỉ hôm nay mà mãi mãi về sau.", // Nội dung lời nhắn
+                    button: {
+                        text: "❤️️",
+                    },
+                });
+            }
+        </script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    </body>
+</html>
